@@ -1,14 +1,14 @@
 <?php
-/**
- * 
- * @author Alex Panshin <deadyaga@gmail.com>
- * @package
- * @subpackage 
- */
+
 
 namespace Mailvan\Core\Model;
 
-
+/**
+ * Base implementation of SubscriptionList interface. Feel free to extend it.
+ *
+ * @author Alex Panshin <deadyaga@gmail.com>
+ * @package Mailvan\Core\Model
+ */
 class SubscriptionList implements SubscriptionListInterface
 {
     protected $id;

@@ -7,8 +7,7 @@ use Guzzle\Service\ClientInterface as BaseClientInterface;
 /**
  * 
  * @author Alex Panshin <deadyaga@gmail.com>
- * @package
- * @subpackage 
+ * @package Mailvan\Core
  */
 interface ClientInterface extends BaseClientInterface
 {

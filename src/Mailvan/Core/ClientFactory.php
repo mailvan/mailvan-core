@@ -8,8 +8,7 @@ use Guzzle\Service\Builder\ServiceBuilder;
  * This class builds ClientInterface instance.
  *
  * @author Alex Panshin <deadyaga@gmail.com>
- * @package Mailvan
- * @subpackage Core
+ * @package Mailvan\Core
  */
 class ClientFactory
 {

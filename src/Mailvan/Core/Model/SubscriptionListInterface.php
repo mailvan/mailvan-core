@@ -1,14 +1,12 @@
 <?php
-/**
- * 
- * @author Alex Panshin <deadyaga@gmail.com>
- * @package
- * @subpackage 
- */
 
 namespace Mailvan\Core\Model;
 
-
+/**
+ * Interface SubscriptionListInterface
+ *
+ * @package Mailvan\Core\Model
+ */
 interface SubscriptionListInterface
 {
     /**
