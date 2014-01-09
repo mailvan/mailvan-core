@@ -29,4 +29,12 @@ class SubscriptionList implements SubscriptionListInterface
     {
         $this->id = $id;
     }
+
+    /**
+     * @param int $id
+     */
+    public function __construct($id = null)
+    {
+        $this->setId($id);
+    }
 }
