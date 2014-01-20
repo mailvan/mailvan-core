@@ -1,7 +1,10 @@
 <?php
 
 
-namespace Mailvan\Core;
+namespace Mailvan\Core\Queue;
+
+use Mailvan\Core\Request\Request;
+use Mailvan\Core\Request\RequestFactoryInterface;
 
 
 /**
@@ -15,6 +18,14 @@ namespace Mailvan\Core;
  */
 interface QueueInterface
 {
+    /**
+     * This method is a way to inject your own RequestFactory instance into
+     *
+     * @param RequestFactoryInterface $factory
+     * @return void
+     */
+    public function setRequestFactory(RequestFactoryInterface $factory);
+
     /**
      * Pops first element from queue, creates Request instance from it and returns it.
      * Method must try to unserialize popped element before creating Request instance
