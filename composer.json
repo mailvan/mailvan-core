@@ -17,6 +17,12 @@
             "role": "Lead Developer"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "Mailvan": "src/",
+            "Mailvan\\Tests": "tests/"
+        }
+    },
     "require": {
         "php": ">=5.4",
         "guzzle/guzzle": "3.8.*"
