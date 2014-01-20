@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Mailvan\Core;
+namespace Mailvan\Core\Request;
 
 /**
  * QueueInterface::pop() MUST return instance that implement this interface.
@@ -38,12 +38,4 @@ interface RequestInterface
      * @return array|null
      */
     public function getArguments();
-
-    /**
-     * Creates Request instance from given $data array
-     *
-     * @param array $data
-     * @return RequestInterface
-     */
-    public static function fromArray(array $data);
-} 
+}

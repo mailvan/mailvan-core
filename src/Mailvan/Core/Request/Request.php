@@ -1,6 +1,6 @@
 <?php
 
-namespace Mailvan\Core;
+namespace Mailvan\Core\Request;
 
 /**
  * Basic implementation of RequestInterface
@@ -59,22 +59,6 @@ class Request implements RequestInterface
     public function getArguments()
     {
         return $this->command_arguments;
-    }
-
-    /**
-     * Creates Request instance from given $data array
-     *
-     * @param array $data
-     * @return RequestInterface
-     */
-    public static function fromArray(array $data)
-    {
-        $service = $data['service'];
-        $params = empty($data['params']) ? false : $data['params'];
-        $command = $data['command'];
-        $arguments = empty($data['arguments']) ? [] : $data['arguments'];
-
-        return new self($service, $params, $command, $arguments);
     }
 
     /**
