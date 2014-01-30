@@ -3,7 +3,7 @@
 
 namespace Mailvan\Core\Queue;
 
-use Mailvan\Core\Request\Request;
+use Mailvan\Core\Request\RequestInterface;
 use Mailvan\Core\Request\RequestFactoryInterface;
 
 
@@ -30,7 +30,7 @@ interface QueueInterface
      * Pops first element from queue, creates Request instance from it and returns it.
      * Method must try to unserialize popped element before creating Request instance
      *
-     * @return Request
+     * @return RequestInterface
      */
     public function pop();
 
