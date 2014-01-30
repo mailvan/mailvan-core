@@ -12,6 +12,29 @@ use Guzzle\Service\Builder\ServiceBuilder;
  */
 class ClientFactory
 {
+    private $config_path;
+
+    /**
+     * @param null|string $config_path
+     */
+    public function __construct($config_path = null)
+    {
+        $this->setConfigPath($config_path ?: __DIR__.'/services.json');
+    }
+
+    /**
+     * @param $path
+     * @throws \InvalidArgumentException
+     */
+    public function setConfigPath($path)
+    {
+        if (!is_readable($path)) {
+            throw new \InvalidArgumentException(sprintf("Config file '%s' is not readable or doesn't exist.", $path));
+        }
+
+        $this->config_path = $path;
+    }
+
     /**
      * Returns path to services configuration file
      *
@@ -19,7 +42,7 @@ class ClientFactory
      */
     protected function getConfigPath()
     {
-        return __DIR__.'/services.json';
+        return $this->config_path;
     }
 
     /**
