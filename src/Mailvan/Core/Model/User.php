@@ -20,7 +20,6 @@ class User implements UserInterface
               $first_name,
               $last_name;
 
-
     /**
      * @return int
      */
@@ -128,12 +127,22 @@ class User implements UserInterface
     {
         $user = new self();
 
-        foreach (['id' => 'setId', 'email' => 'setEmail', 'first_name' => 'setFirstName', 'last_name' => 'setLastName', 'name' => 'setName'] as $field => $method) {
+        foreach (self::getFieldsMap() as $field => $method) {
             if (!empty($data[$field])) {
                 $user->$method($data[$field]);
             }
         }
 
         return $user;
+    }
+
+    /**
+     * Get field-method map for creating user from array
+     *
+     * @return array
+     */
+    protected static function getFieldsMap()
+    {
+        return ['id' => 'setId', 'email' => 'setEmail', 'first_name' => 'setFirstName', 'last_name' => 'setLastName', 'name' => 'setName'];
     }
 }
